@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: 463b2a9f797c77f4a8868f08a16ba39b
+timeCreated: 1517914113
+licenseType: Free
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Siddhanta
+  fontNames:
+  - 5369646468616e7461
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
