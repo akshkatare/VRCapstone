@@ -18,92 +18,21 @@ public class SceneManagerSpeech : MonoBehaviour
 
     public AudioRecorder recorder;
     public AudioPlayer player;
-    public Button buttonStart, buttonStop;
-    public Text labelRecordingStateValue, labelPlaybackStateValue;
-  // public Scrollbar scrollBarPitch, scrollBarFFT;
-  // public AudioMixer mixerPlayer;
-
+	public static SceneManagerSpeech instance;
     private AudioClip _currentClip;
 
     #endregion
 
-
-    void Start()
-    {
-		//
-        /*if (mixerPlayer != null)
-        {
-            float valuePitch;
-            if (mixerPlayer.GetFloat("PitchShifter", out valuePitch))
-                scrollBarPitch.value = Mathf.InverseLerp(0.5f, 2f, valuePitch);
-            float valueFFT;
-            if (mixerPlayer.GetFloat("FFTShifter", out valueFFT))
-                scrollBarFFT.value = Mathf.InverseLerp(256f, 4096f, valueFFT);
-        }*/
-    }
-
-    void Update()
-    {
-       // if (recorder != null)
-           // if (labelRecordingStateValue != null)
-                //labelRecordingStateValue.text = recorder.State.ToString();
-        //if (player != null)
-            //if (labelPlaybackStateValue != null)
-              //  labelPlaybackStateValue.text = player.isPlaying.ToString();
-    }
+	void Start()
+	{
+		instance = this;
+	}
 
     void OnDestroy()
     {
         Unsubscribe();
     }
 
-    /*public void UpdateScrollBarPitch(Scrollbar s)
-    {
-        if (mixerPlayer != null && s != null)
-            mixerPlayer.SetFloat("PitchShifter", Mathf.Lerp(0.5f, 2f, s.value));
-    }*/
-
-   /* public void UpdateScrollBarFFT(Scrollbar s)
-    {
-       if (mixerPlayer != null && s != null)
-            mixerPlayer.SetFloat("FFTShifter", Mathf.Lerp(256f, 4096f, s.value));
-    }*/
-
-   /* public void UpdateToggleAudioMixer(Toggle t)
-    {
-        if (t == null)
-            return;
-        if (scrollBarPitch != null)
-        {
-            scrollBarPitch.interactable = t.isOn;
-            if (!t.isOn)
-                scrollBarPitch.value = Mathf.InverseLerp(0.5f, 2f, 1f);
-        }
-        if (scrollBarFFT != null)
-        {
-            scrollBarFFT.interactable = t.isOn;
-            if (!t.isOn)
-                scrollBarFFT.value = Mathf.InverseLerp(256f, 4096f, 2048f);
-        }
-    }*/
-
-    public void ClickButtonStart()
-    {
-		
-         buttonStart.gameObject.SetActive(false);
-        
-            //buttonStop.gameObject.SetActive(true);
-        StartRecording();
-    }
-
-    public void ClickButtonStop()
-    {
-        
-            /*buttonStart.gameObject.SetActive(true);
-     
-            buttonStop.gameObject.SetActive(false);*/
-        StopRecording();
-    }
 
     private void Subscribe()
     {
@@ -121,11 +50,14 @@ public class SceneManagerSpeech : MonoBehaviour
             player.OnPlaybackEnd.RemoveListener(OnPlayingEnd);
     }
 
-    private void StartRecording()
+    public  void StartRecording()
     {
+		Debug.Log ("1");
         Subscribe();
-        if (recorder != null)
-            recorder.StartRecording();
+		if (recorder != null)
+			recorder.StartRecording ();
+		else {
+		}
     }
 
     private void StopRecording()
@@ -133,6 +65,7 @@ public class SceneManagerSpeech : MonoBehaviour
         Unsubscribe();
         if (recorder != null)
             recorder.StopRecording();
+		
         if (player != null)
             player.StopPlaying();
     }

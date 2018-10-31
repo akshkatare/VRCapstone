@@ -70,7 +70,7 @@ public class AudioRecorder : MonoBehaviour
 
     public bool StartRecording()
     {
-		buttonMng.GetComponent<buttonmanager> ().startRecording();
+		//buttonMng.GetComponent<buttonmanager> ().startRecording();
         if (Microphone.devices.Length < 1)
         {
             Debug.LogWarning("Microphone was not find");
@@ -100,7 +100,7 @@ public class AudioRecorder : MonoBehaviour
 
     public void StopRecording()
     {
-		buttonMng.GetComponent<buttonmanager> ().startLoading ();
+		//buttonMng.GetComponent<buttonmanager> ().startLoading ();
         if (Microphone.devices.Length < 1)
             return;
 
@@ -116,7 +116,7 @@ public class AudioRecorder : MonoBehaviour
             clip.SetData(samples, 0);
             if (OnRecordingEnd != null)
                 OnRecordingEnd.Invoke(clip);
-
+			Debug.Log ("test");
 			RequestMaker.GetComponent<CallRequest> ().CheckInput (clip);
         }
 
