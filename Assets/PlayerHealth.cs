@@ -6,10 +6,11 @@ public class PlayerHealth : MonoBehaviour {
 
     public static PlayerHealth instance;
     public int Health;
-
+    public bool isDead;
 	// Use this for initialization
 	void Start () {
         instance = this;
+        isDead = false;
 	}
 
     public void Damage(int value)
@@ -17,7 +18,7 @@ public class PlayerHealth : MonoBehaviour {
         Health = Health - value;
         if (Health <= 0)
         {
-
+            isDead = true;
         }
     }
 

@@ -36,7 +36,7 @@ public class EnemyAIController : MonoBehaviour {
             navAgent.SetDestination(Player.transform.position);
             if (Vector3.Distance(this.transform.position, Player.transform.position) < 2f)
               {
-                  Debug.Log("Attack");
+                  //Debug.Log("Attack");
                   navAgent.isStopped = true;
                   currentState = "Attack";
                 aiAnimationScript.Idle();
@@ -45,31 +45,37 @@ public class EnemyAIController : MonoBehaviour {
             
         }
 
-        if (currentState == "Attack" && Vector3.Distance(this.transform.position, Player.transform.position) > 2f)
-        {
-            currentState = "Walk";
-            Debug.Log(currentState);
-            aiAnimationScript.Walk();
-        }
 
         if (currentState == "Attack")
         {
+            
             if (timer > timeBetweenAttacks)
             {
                 timer = 0f;
                 aiAnimationScript.Attack();
             }
+
+            if (Vector3.Distance(this.transform.position, Player.transform.position) > 2f)
+            {
+                currentState = "Walk";
+              //  Debug.Log("GotoWalk");
+                navAgent.isStopped = false;
+                // Debug.Log(currentState);
+                aiAnimationScript.Walk();
+            }
         }
+      
+        
          
 
         if (currentState == "Walk")
         {
-            navAgent.isStopped = false;
+           // Debug.Log("Walking");
             navAgent.SetDestination(Player.transform.position);
-
+           // Debug.Log(navAgent.destination);
             if (Vector3.Distance(this.transform.position, Player.transform.position) < 2f)
             {
-                
+                //Debug.Log("GotoAttack");
                 currentState = "Attack";
             }
             
