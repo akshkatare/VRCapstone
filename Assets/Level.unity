@@ -2566,6 +2566,10 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 0.8069943
       objectReference: {fileID: 0}
+    - target: {fileID: 138024, guid: 6d137d44990918a48bfc447d3dda3796, type: 2}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6d137d44990918a48bfc447d3dda3796, type: 2}
   m_IsPrefabParent: 0
@@ -17008,6 +17012,10 @@ Prefab:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 124028, guid: 30d00bb7fb067de4c99cc3b87f401945, type: 2}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 30d00bb7fb067de4c99cc3b87f401945, type: 2}
   m_IsPrefabParent: 0
@@ -22130,6 +22138,11 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 293348555}
   m_Mesh: {fileID: 4300000, guid: 4bc7ffbf5a30d7e42a4c15df20e0eb32, type: 3}
+--- !u!1 &294071732 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1296676338185940, guid: af5fa46493b5edf46a6f62a7bb721638,
+    type: 2}
+  m_PrefabInternal: {fileID: 226886674}
 --- !u!1 &294374819
 GameObject:
   m_ObjectHideFlags: 0
@@ -78970,7 +78983,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1070728180}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Sword
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -81064,6 +81077,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 114345322908583736, guid: e5ae62f988f34964091e5a8fc7d6fae1,
+        type: 2}
+      propertyPath: cmd
+      value: 
+      objectReference: {fileID: 294071732}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e5ae62f988f34964091e5a8fc7d6fae1, type: 2}
   m_IsPrefabParent: 0
