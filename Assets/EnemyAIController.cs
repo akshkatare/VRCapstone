@@ -16,6 +16,7 @@ public class EnemyAIController : MonoBehaviour {
         navAgent = this.GetComponent<NavMeshAgent>();
         aiAnimationScript = this.GetComponent<EnemyAIAnimation>();
         currentState = "Born";
+		Player = GameObject.FindGameObjectWithTag ("Player");
         
 	}
 	
