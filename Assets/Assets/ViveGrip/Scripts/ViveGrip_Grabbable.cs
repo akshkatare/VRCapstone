@@ -76,6 +76,7 @@ public class ViveGrip_Grabbable : ViveGrip_Object {
   void ViveGripGrabStart(ViveGrip_GripPoint gripPoint) {
 
 		if (this.GetComponent<Rigidbody> ().isKinematic) {this.GetComponent<Rigidbody> ().isKinematic = false;
+			this.GetComponent<MeshCollider> ().enabled = false;
 		}
 		try{
 			attachedGripPoints.Add(gripPoint);}
