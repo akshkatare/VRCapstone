@@ -39,19 +39,19 @@ public class SpawnManager : MonoBehaviour {
        tempObject= Random.Range(0f, 100f);
 		tempPosition = Random.Range (0f, spawnPoints.Length - 1);
 
-		if (tempObject > 40f) 
+		if (tempObject < 40f && tempObject>0f) 
 		{
-			Instantiate (Enemies [0], spawnPoints [(int)tempPosition]);   
+			Instantiate (Enemies [0], spawnPoints [(int)tempPosition].transform.position, spawnPoints[(int)tempPosition].transform.rotation,null);   
 		} 
 
 		else if (tempObject >= 40f && tempObject < 80f) 
 		{
-			Instantiate (Enemies [1], spawnPoints [(int)tempPosition]);  
-		}
+			Instantiate (Enemies [1], spawnPoints[(int)tempPosition].transform.position, spawnPoints[(int)tempPosition].transform.rotation, null);
+        }
 
 		else 
 		{
-			Instantiate (Enemies [2], spawnPoints [(int) tempPosition]);  
-		}
+			Instantiate (Enemies [2], spawnPoints[(int)tempPosition].transform.position, spawnPoints[(int)tempPosition].transform.rotation, null);
+        }
     }
 }

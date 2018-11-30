@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028377, g: 0.22571409, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -180,15 +180,15 @@ Prefab:
       propertyPath: m_RootOrder
       value: 11
       objectReference: {fileID: 0}
-    - target: {fileID: 1246806534885262, guid: fa7c8d4041d72ad4893871ac240b4211, type: 2}
-      propertyPath: m_Name
-      value: 'Enemy 2 : WarChief'
-      objectReference: {fileID: 0}
     - target: {fileID: 114350076710364836, guid: fa7c8d4041d72ad4893871ac240b4211,
         type: 2}
       propertyPath: Player
       value: 
       objectReference: {fileID: 496466805}
+    - target: {fileID: 1246806534885262, guid: fa7c8d4041d72ad4893871ac240b4211, type: 2}
+      propertyPath: m_Name
+      value: 'Enemy 2 : WarChief'
+      objectReference: {fileID: 0}
     - target: {fileID: 1246806534885262, guid: fa7c8d4041d72ad4893871ac240b4211, type: 2}
       propertyPath: m_IsActive
       value: 0
@@ -235,15 +235,15 @@ Prefab:
       propertyPath: m_RootOrder
       value: 10
       objectReference: {fileID: 0}
-    - target: {fileID: 1696040295369232, guid: c9048ea643d931c42911b0ea2bb98d14, type: 2}
-      propertyPath: m_Name
-      value: 'Enemy 1 : Shaman Root'
-      objectReference: {fileID: 0}
     - target: {fileID: 114110191237646240, guid: c9048ea643d931c42911b0ea2bb98d14,
         type: 2}
       propertyPath: Player
       value: 
       objectReference: {fileID: 496466805}
+    - target: {fileID: 1696040295369232, guid: c9048ea643d931c42911b0ea2bb98d14, type: 2}
+      propertyPath: m_Name
+      value: 'Enemy 1 : Shaman Root'
+      objectReference: {fileID: 0}
     - target: {fileID: 1696040295369232, guid: c9048ea643d931c42911b0ea2bb98d14, type: 2}
       propertyPath: m_IsActive
       value: 0
@@ -348,6 +348,7 @@ GameObject:
   - component: {fileID: 558335943}
   - component: {fileID: 558335942}
   - component: {fileID: 558335941}
+  - component: {fileID: 558335944}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -421,6 +422,17 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 558335939}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &558335944
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 558335939}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 636a82d5d2df05d4c8597a92a32d129b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &594425179
 GameObject:
   m_ObjectHideFlags: 0
@@ -700,15 +712,15 @@ Prefab:
       propertyPath: m_RootOrder
       value: 12
       objectReference: {fileID: 0}
-    - target: {fileID: 1172808645601492, guid: 138be83043a031849a9560969bf3c7b9, type: 2}
-      propertyPath: m_Name
-      value: Enemy 3 :Skeleton
-      objectReference: {fileID: 0}
     - target: {fileID: 114215492381395828, guid: 138be83043a031849a9560969bf3c7b9,
         type: 2}
       propertyPath: Player
       value: 
       objectReference: {fileID: 496466805}
+    - target: {fileID: 1172808645601492, guid: 138be83043a031849a9560969bf3c7b9, type: 2}
+      propertyPath: m_Name
+      value: Enemy 3 :Skeleton
+      objectReference: {fileID: 0}
     - target: {fileID: 1172808645601492, guid: 138be83043a031849a9560969bf3c7b9, type: 2}
       propertyPath: m_IsActive
       value: 0
