@@ -331,15 +331,18 @@ namespace RootMotion.Dynamics {
 			}
 			
 			rotationRelativeToTarget = Quaternion.Inverse(target.rotation) * transform.rotation;
-			
+			try{
 			Quaternion toJointSpace = Quaternion.LookRotation(forward, up);
+			
 			toJointSpaceInverse = Quaternion.Inverse(toJointSpace);
 			toJointSpaceDefault = defaultLocalRotation * toJointSpace;
 			
 			toParentSpace = Quaternion.Inverse(targetParentRotation) * parentRotation;
 			
 			localRotationConvert = Quaternion.Inverse(targetLocalRotation) * localRotation;
-			
+			}
+			catch(Exception e) {
+			}
 			// Anchoring
 			if (joint.connectedBody != null) {
 				joint.autoConfigureConnectedAnchor = false;

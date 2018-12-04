@@ -233,8 +233,12 @@ namespace RootMotion.Dynamics {
 		public Animator targetAnimator { 
 			get {
 				// Protect from the Animator being replaced (UMA)
-				if (_targetAnimator == null) _targetAnimator = targetRoot.GetComponentInChildren<Animator>();
-				return _targetAnimator;
+				if (_targetAnimator!=null) {
+					if (_targetAnimator == null)
+						_targetAnimator = targetRoot.GetComponentInChildren<Animator> ();
+					return _targetAnimator;
+				} else
+					return null;
 			}
 			set {
 				_targetAnimator = value;

@@ -26,6 +26,13 @@ public class EnemyAIHealth : MonoBehaviour {
     public void Die()
     {
         animationScript.Die();
+		Invoke ("CallToDestroy",5f);
     }
 
+
+
+	void CallToDestroy()
+	{
+		Destroy (this.gameObject);
+	}
 }
