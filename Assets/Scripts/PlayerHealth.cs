@@ -7,6 +7,7 @@ public class PlayerHealth : MonoBehaviour {
     public static PlayerHealth instance;
     public int Health;
     public bool isDead;
+	public Light lght;
 	// Use this for initialization
 	void Start () {
         instance = this;
@@ -15,10 +16,15 @@ public class PlayerHealth : MonoBehaviour {
 
     public void Damage(int value)
     {
-        Health = Health - value;
+
+
+		Debug.Log (lght.intensity);
+		Health = Health - (int)(value/2);
+		lght.range = (Health * 4) / 100;
         if (Health <= 0)
         {
             isDead = true;
+			Die ();
         }
     }
 
@@ -30,4 +36,8 @@ public class PlayerHealth : MonoBehaviour {
             Health = 100;
         }
     }
+	public void Die()
+	{
+		this.GetComponent<SteamVR_LoadLevel> ().Trigger ();
+	}
 }

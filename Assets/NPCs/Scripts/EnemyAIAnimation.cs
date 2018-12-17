@@ -37,7 +37,7 @@ public class EnemyAIAnimation : MonoBehaviour {
 
    public void Die()
     {
-        anim.Play(DieAnimName);
+      //  anim.Play(DieAnimName);
     }
 
     public void Idle()

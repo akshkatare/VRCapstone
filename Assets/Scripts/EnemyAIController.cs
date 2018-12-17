@@ -22,72 +22,65 @@ public class EnemyAIController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        timer = timer + Time.deltaTime;
+		if (!this.GetComponent<EnemyAIHealth> ().isDead) {
+			timer = timer + Time.deltaTime;
 
 
-        if (currentState == "Born")
-        {
-            currentState = "ChaseRun";
-            aiAnimationScript.Run();
-            navAgent.SetDestination(Player.transform.position);
-        }
+			if (currentState == "Born") {
+				currentState = "ChaseRun";
+				aiAnimationScript.Run ();
+				navAgent.SetDestination (Player.transform.position);
+			}
 
-        if (currentState == "ChaseRun")
-        {
-            navAgent.SetDestination(Player.transform.position);
-            if (Vector3.Distance(this.transform.position, Player.transform.position) < 2f)
-              {
-                  //Debug.Log("Attack");
-                  navAgent.isStopped = true;
-                  currentState = "Attack";
-                aiAnimationScript.Idle();
-            }
+			if (currentState == "ChaseRun") {
+				navAgent.SetDestination (Player.transform.position);
+				if (Vector3.Distance (this.transform.position, Player.transform.position) < 2f) {
+					//Debug.Log("Attack");
+					navAgent.isStopped = true;
+					currentState = "Attack";
+					aiAnimationScript.Idle ();
+				}
             
             
-        }
+			}
 
 
-        if (currentState == "Attack")
-        {
+			if (currentState == "Attack") {
             
-            if (timer > timeBetweenAttacks)
-            {
-                timer = 0f;
-                aiAnimationScript.Attack();
-            }
+				if (timer > timeBetweenAttacks) {
+					timer = 0f;
+					aiAnimationScript.Attack ();
+				}
 
-            if (Vector3.Distance(this.transform.position, Player.transform.position) > 2f)
-            {
-                currentState = "Walk";
-              //  Debug.Log("GotoWalk");
-                navAgent.isStopped = false;
-                // Debug.Log(currentState);
-                aiAnimationScript.Walk();
-            }
-        }
+				if (Vector3.Distance (this.transform.position, Player.transform.position) > 2f) {
+					currentState = "Walk";
+					//  Debug.Log("GotoWalk");
+					navAgent.isStopped = false;
+					// Debug.Log(currentState);
+					aiAnimationScript.Walk ();
+				}
+			}
       
         
          
 
-        if (currentState == "Walk")
-        {
-           // Debug.Log("Walking");
-            navAgent.SetDestination(Player.transform.position);
-           // Debug.Log(navAgent.destination);
-            if (Vector3.Distance(this.transform.position, Player.transform.position) < 2f)
-            {
-                //Debug.Log("GotoAttack");
-                currentState = "Attack";
-            }
+			if (currentState == "Walk") {
+				// Debug.Log("Walking");
+				navAgent.SetDestination (Player.transform.position);
+				// Debug.Log(navAgent.destination);
+				if (Vector3.Distance (this.transform.position, Player.transform.position) < 2f) {
+					//Debug.Log("GotoAttack");
+					currentState = "Attack";
+				}
             
-        }
+			}
        
        
 
        
 
         
-        
+		}
 
 	}
 
